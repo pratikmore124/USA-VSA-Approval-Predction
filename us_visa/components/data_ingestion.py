@@ -45,7 +45,7 @@ class DataIngestion:
             return dataframe
 
         except Exception as e:
-            raise USvisaException(e,sys) from e
+            raise USvisaException(e,sys) 
         
     def split_data_as_train_test(self,dataframe:DataFrame)->None:
         """
@@ -71,7 +71,7 @@ class DataIngestion:
             logging.info("Exported train and test file path")        
         
         except Exception as e:
-            raise USvisaException(e,sys) from e
+            raise USvisaException(e,sys)
 
     def initiate_data_ingestion(self)-> DataIngestionArtifact:
         """
@@ -97,4 +97,4 @@ class DataIngestion:
             logging.info(f"Data ingestion artifact:{data_ingestion_artifact}")
             return data_ingestion_artifact
         except Exception as e:
-            raise USvisaException(e,sys) from e
+            raise USvisaException(e,sys)
