@@ -3,7 +3,7 @@ from us_visa.exception import USvisaException
 from us_visa.logger import logging
 
 import os
-from us_visa.constant import DATABASE_NAME,MONGODB_URL_KEY
+from us_visa.constants import DATABASE_NAME,MONGODB_URL_KEY
 import pymongo
 
 class MongoDBClient:
@@ -23,7 +23,7 @@ class MongoDBClient:
 
                 if mongo_db_url is None:
                     raise Exception(f"Environment Key:{MONGODB_URL_KEY} is not set.")
-                
+                 
                 MongoDBClient.client = pymongo.MongoClient(mongo_db_url,tlsCAFILE=ca)
 
             self.client = MongoDBClient.client
@@ -31,4 +31,4 @@ class MongoDBClient:
             self.database_name = database_name
             logging.info("MongoDB connection succesfull")
         except Exception as e:
-            raise USvisaException(e,sys)
+            raise USvisaException(e,sys) from e

@@ -4,7 +4,7 @@ import os
 from from_root import from_root
 from datetime import datetime
 
-LOG_FILE = f"{datetime.now().strftime('%m_%D_%Y_%H_%M_%S')}/log"
+LOG_FILE = f"{datetime.now().strftime('%m_%D_%Y-%H_%M_%S')}.log"
 
 log_dir = "logs"
 
