@@ -21,10 +21,11 @@ class DataValidation:
         """
 
         try:
+            logging.info("Data Validation constructor loading")
             self.data_ingestion_artifact = data_ingestion_artifact
             self.data_validation_config = data_validation_config
             self._schema_config = read_yaml_file(file_path=SCHEMA_FILE_PATH)
-        
+            
         except Exception as e:
             raise USvisaException(e,sys)
         
@@ -38,9 +39,10 @@ class DataValidation:
         """
 
         try:
+            logging.info("self._schema_config :",self._schema_config["columns"])
             status = len(dataframe.columns) == len(self._schema_config["columns"])
             logging.info(f"Is required columns present:{status}")
-            print(self._schema_config)
+            
             return status
 
         except Exception as e:
@@ -83,7 +85,7 @@ class DataValidation:
     @staticmethod
     def read_data(file_path)->DataFrame:
         try:
-            pd.read_csv(file_path)
+            return pd.read_csv(file_path)
         except Exception as e:
             raise USvisaException(e,sys)
 
@@ -97,12 +99,12 @@ class DataValidation:
         """
 
         try:
-            data_drift_profile = Profile(section=[DataDriftProfileSection()])
+            data_drift_profile = Profile(sections=[DataDriftProfileSection()])
 
             data_drift_profile.calculate(reference_df,current_df)
 
             report = data_drift_profile.json()
-            json_report = json.load(report)
+            json_report = json.loads(report)
 
             write_yaml_file(file_path=self.data_validation_config.drift_report_file_path,content=json_report)
 
