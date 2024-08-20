@@ -96,7 +96,7 @@ def drop_columns(df: DataFrame, cols: list)-> DataFrame:
     cols: list of columns to be dropped
     """
     logging.info("Entered drop_columns methon of utils")
-
+    logging.info("Dataframe shape:"+str(df.columns))
     try:
         df = df.drop(columns=cols, axis=1)
 

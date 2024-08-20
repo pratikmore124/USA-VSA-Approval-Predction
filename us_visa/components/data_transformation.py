@@ -31,7 +31,7 @@ class DataTransformation:
             self.data_validation_artifact = data_validation_artifact
             self.data_transformation_config = data_transformation_config
             self._schema_config = read_yaml_file(file_path=SCHEMA_FILE_PATH)
-
+            logging.info("Data validation artifact in Transformatin init:"+str(self.data_validation_artifact))
         except Exception as e:
             raise USvisaException(e,sys)
         
@@ -139,8 +139,8 @@ class DataTransformation:
                 drop_cols = self._schema_config["drop_columns"] 
                 
                 logging.info(f"Drop columns in drop_cols:{drop_cols} of training dataset")
-
-                input_feature_test_df = drop_columns(df = input_feature_train_df,cols=drop_cols)
+                logging.info("df columns:"+str(input_feature_test_df.columns))
+                input_feature_test_df = drop_columns(df = input_feature_test_df,cols=drop_cols)
 
                 logging.info("Drop the column in drop_cols of Test Dataset")
 
