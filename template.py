@@ -13,9 +13,9 @@ list_of_files = [
     f"{Project_name}/components/__init__.py", # folder for all cicd pipleline code,
     f"{Project_name}/components/data_ingestion.py",   # data ingestion folder
     f"{Project_name}/components/data_validation.py",   # data validation folder
-    f"{Project_name}/components/data_ingestion.py",   # data transformation folder
-    f"{Project_name}/components/data_transformation.py",   # data modek trainer folder
-    f"{Project_name}/components/model_trainer.py",   # data model evaluation folder
+    f"{Project_name}/components/data_transformation.py",   # data transformation folder
+    f"{Project_name}/components/model_trainer.py",   # data model trainer folder
+    f"{Project_name}/components/model_evaluation.py",   # data model evaluation folder
     f"{Project_name}/components/model_pusher.py",   # data model pusher folder
     
     f"{Project_name}/configuration/__init__.py",   # configuration file

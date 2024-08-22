@@ -4,7 +4,7 @@ from sklearn.pipeline import Pipeline
 from us_visa.logger import logging
 from us_visa.exception import USvisaException
 from pandas import DataFrame
-
+import sys 
 class TargetValueMapping:
     def __init__(self):
         self.Certified:int=0

@@ -32,10 +32,13 @@ def write_yaml_file(file_path: str, content: object, replace: bool = False) -> N
 
 
 def load_object(file_path: str) -> object:
+    '''
+    *dill* library in Python used for deserializing (loading) Python objects from a file or file-like object.Here we are deserializing the preprocessing object file
+    '''
     logging.info("Entered the load_object method of utils")
-
+    
     try:
-
+       
         with open(file_path, "rb") as file_obj:
             obj = dill.load(file_obj)
 
