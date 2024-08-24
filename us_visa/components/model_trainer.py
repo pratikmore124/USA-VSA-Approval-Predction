@@ -52,6 +52,7 @@ class ModelTrainer:
             recall = recall_score(y_test, y_pred)
             metric_artifact = ClassificationMetricArtifact(f1_score=f1, precision_score=precision, recall_score=recall)
             
+            logging.info("Model object and report completed")
             return best_model_detail, metric_artifact
         
         except Exception as e:
