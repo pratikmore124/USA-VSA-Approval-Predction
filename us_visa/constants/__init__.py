@@ -23,7 +23,7 @@ SCHEMA_FILE_PATH = os.path.join("config", "schema.yaml")
 
 AWS_ACCESS_KEY_ID_ENV_KEY = "AWS_ACCESS_KEY_ID"
 AWS_SECRET_ACCESS_KEY_ENV_KEY = "AWS_SECRET_ACCESS_KEY"
-REGION_NAME = "eu-north-1"
+REGION_NAME = "us-east-1"
 
 
 """
@@ -63,7 +63,7 @@ MODEL_TRAINER_EXPECTED_SCORE:float = 0.6
 Model Evaluation related constant start with MODEL_EVALUATION var name
 """
 MODEL_EVALUATION_CHANGED_THRESHOLD :float = 0.06
-MODEL_BUCKET_NAME ="usvisa-model2024"
+MODEL_BUCKET_NAME ="usvisa-models24"
 MODEL_PUSHER_S3_KEY = "model-registry"
 
 APP_HOST = "0.0.0.0"
